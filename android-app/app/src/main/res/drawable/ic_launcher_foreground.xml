@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder mark (a simple sparkle) — swap for real brand artwork before
+     shipping past the pilot. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#E8B86D"
+        android:pathData="M54,24 L62,46 L84,54 L62,62 L54,84 L46,62 L24,54 L46,46 Z" />
+</vector>

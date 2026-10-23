@@ -1,0 +1,35 @@
+name: Build Android APK
+
+# Builds the kiosk app in GitHub's cloud — no Android Studio or local SDK
+# needed. Run it from the Actions tab (works fine from the GitHub mobile
+# site or app); the APK comes back as a downloadable build artifact.
+on:
+  push:
+    branches: [ main ]
+    paths: [ "android-app/**" ]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Make gradlew executable
+        working-directory: android-app
+        run: chmod +x gradlew
+
+      - name: Build debug APK
+        working-directory: android-app
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: magic-mirror-debug-apk
+          path: android-app/app/build/outputs/apk/debug/*.apk

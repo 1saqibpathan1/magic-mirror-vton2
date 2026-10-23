@@ -1,0 +1,10 @@
+<resources>
+    <!-- Fixed dark kiosk theme — no light variant; the whole point is a
+         near-black canvas the garment photography stands out against. -->
+    <style name="Theme.MagicMirror" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+</resources>
