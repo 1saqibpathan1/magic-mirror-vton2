@@ -98,7 +98,9 @@ dependencies {
     implementation("com.google.zxing:core:3.5.3")
 
     // USB UVC webcam — see camera/UvcCameraFragment.kt for integration notes
-    implementation("com.github.jiangdongguo.AndroidUSBCamera:libausbc:3.2.7")
+    implementation("com.github.jiangdongguo.AndroidUSBCamera:libausbc:3.2.7") {
+    exclude(group = "com.zlc.glide", module = "webpdecoder")
+}
 
     debugImplementation("androidx.compose.ui:ui-tooling")
 }
